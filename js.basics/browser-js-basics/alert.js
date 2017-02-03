@@ -1,1 +1,1 @@
-alert("YOU SHALL NOT PASS O.O");
+alert("Hello Denver!");
