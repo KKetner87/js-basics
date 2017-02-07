@@ -1,5 +1,7 @@
 var victims = prompt ("How many disaster victims would you like to enter?") 
  
+//* for loop
+
 for (var i = victims; i > 0; i--) {
   if (victims > 0) {
     var name = prompt ("What is the victim's name?");
@@ -8,7 +10,7 @@ for (var i = victims; i > 0; i--) {
  } 
 }
 
-//alert (name+'\n'+number+'\n'+street);
-  
+alert ([name(victims.length)+'\n'+number(victims.length)+'\n'+street(victims.length)]);
 
 
+//* map method with for..of loop 
