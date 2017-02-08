@@ -22,7 +22,8 @@ for(var i = 0; i < 5; i++){
 }
 </pre>
 ### Problems
-<em>Note:</em> The output in each of the problems below is written on a single line for formatting reasons, however your actual output will print each value on a separate line.
+<em>Note:</em> The output in each of the problems below is written on a single line for formatting reasons, 
+however your actual output will print each value on a separate line.
 
 - 0 100 200 300 400 500
 - 1 2 4 8 16 32 64
