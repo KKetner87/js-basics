@@ -1,6 +1,13 @@
+
 var nameEdit = document.querySelector('.user-name > p');
 var aboutEdit = document.querySelector('.about > p');
 
+var namePostEdit = document.querySelector('.user-name > input value');
+var aboutPostEdit = document.querySelector('.about > input value');
+
+
+
+// name <p> to text area // - works!
 
 nameEdit.addEventListener('click', function(){
     
@@ -11,37 +18,44 @@ nameEdit.addEventListener('click', function(){
   container.innerHTML = '<input value ="' + preEdit + '">';
   
 });
-                           
-                          
-                          
-                          
-                          
+
+//text area back to <p>// - broken
+
+namePostEdit.addEventListener('blur', function(){
+    
   
+  var el = document.querySelector(".user-name > input");
+  var postEdit = namePostEdit.innerHTML;
+  var container = document.querySelector(".user-name");
+  container.innerHTML = '<p>' + postEdit + '</p>';
   
-   // Function to make the text area look like a static page//
+});
 
-//function myFunction() {
-    //document.getElementById("name").innerHTML = "John Smith";
-//}
+// content <p> to  text area // - works!
 
-// Function for the onclick to make the textarea editable//
+aboutEdit.addEventListener('click', function(){
+    
+  
+  var el = document.querySelector(".about > p");
+  var preEdit = aboutEdit.innerHTML;
+  var container = document.querySelector(".about");
+  container.innerHTML = '<textarea placeholder = "'+ preEdit + '">';
+  
+});
+
+// text area back to <p> // - broken
+
+aboutPostEdit.addEventListener('blur', function(){
+    
+  
+  var el = document.querySelector(".about > input");
+  var postEdit = aboutPostEdit.innerHTML;
+  var container = document.querySelector(".about");
+  container.innerHTML = '<p>' + postEdit + '</p>';
+  
+});
 
 
-
-
-
-//Function for the blur to return the textarea to looking static//
-
-// 2. Listen for an Event / Define event handler
-//$clickerEl.addEventListener('click', changeHeaderClicker);
-// app.get('/index.html', giveThemTheFile); // express
-// socket.on('someEvent', doTheThing); // sockets
-
-
-//function changeHeaderClicker(){
- // console.log('Clicked!');
-  //$clickerEl.innerHTML += "You Clicked Me!"; // Set the content inside of the element
-//   $clickerEl.innerHTML = $clickerEl.innerHTML + "You Clicked Me!";
-//}          
+     
 
 
