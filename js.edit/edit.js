@@ -3,11 +3,11 @@ var nameEdit = document.querySelector('.user-name > p');
 var aboutEdit = document.querySelector('.about > p');
 
 var namePostEdit = document.querySelector('.user-name > input');
-var aboutPostEdit = document.querySelector('.about > input');
+var aboutPostEdit = document.querySelector('.about > textarea');
 
 //namePostEdit.style.display = 'show';
 
-// name <p> to text area // - works!
+// name <p> to text area // 
 
 nameEdit.addEventListener('click', function(){
     
@@ -16,12 +16,10 @@ nameEdit.addEventListener('click', function(){
   namePostEdit.value = preEdit;
   nameEdit.style.display = 'none';
   namePostEdit.style.display = 'block';
-  //var container = document.querySelector(".user-name");
-  //container.innerHTML = '<input value ="' + preEdit + '">';
   
 });
 
-//text area back to <p>// - broken
+//text area back to <p>// 
 
 namePostEdit.addEventListener('blur', function(){
     
@@ -34,27 +32,26 @@ namePostEdit.addEventListener('blur', function(){
   
 });
 
-// content <p> to  text area // - works!
+// content <p> to  text area // 
 
 aboutEdit.addEventListener('click', function(){
     
-  
-  var el = document.querySelector(".about > p");
   var preEdit = aboutEdit.innerHTML;
-  var container = document.querySelector(".about");
-  container.innerHTML = '<textarea placeholder = "'+ preEdit + '">';
+  aboutPostEdit.value = preEdit;
+  aboutEdit.style.display = 'none';
+  aboutPostEdit.style.display = 'block';
   
 });
 
-// text area back to <p> // - broken
+// text area back to <p> //
 
 aboutPostEdit.addEventListener('blur', function(){
-    
   
-  var el = document.querySelector(".about > input");
-  var postEdit = aboutPostEdit.innerHTML;
-  var container = document.querySelector(".about");
-  container.innerHTML = '<p>' + postEdit + '</p>';
+  
+  var postEdit = aboutPostEdit.value;
+  aboutPostEdit.style.display = 'none';
+  aboutEdit.innerHTML = postEdit;
+  aboutEdit.style.display = 'block';
   
 });
 
