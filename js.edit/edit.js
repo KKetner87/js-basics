@@ -2,20 +2,22 @@
 var nameEdit = document.querySelector('.user-name > p');
 var aboutEdit = document.querySelector('.about > p');
 
-var namePostEdit = document.querySelector('.user-name > input value');
-var aboutPostEdit = document.querySelector('.about > input value');
+var namePostEdit = document.querySelector('.user-name > input');
+var aboutPostEdit = document.querySelector('.about > input');
 
-
+//namePostEdit.style.display = 'show';
 
 // name <p> to text area // - works!
 
 nameEdit.addEventListener('click', function(){
     
-  
-  var el = document.querySelector(".user-name > p");
+  // Copy value into editable one 
   var preEdit = nameEdit.innerHTML;
-  var container = document.querySelector(".user-name");
-  container.innerHTML = '<input value ="' + preEdit + '">';
+  namePostEdit.value = preEdit;
+  nameEdit.style.display = 'none';
+  namePostEdit.style.display = 'block';
+  //var container = document.querySelector(".user-name");
+  //container.innerHTML = '<input value ="' + preEdit + '">';
   
 });
 
@@ -24,10 +26,11 @@ nameEdit.addEventListener('click', function(){
 namePostEdit.addEventListener('blur', function(){
     
   
-  var el = document.querySelector(".user-name > input");
-  var postEdit = namePostEdit.innerHTML;
-  var container = document.querySelector(".user-name");
-  container.innerHTML = '<p>' + postEdit + '</p>';
+  var postEdit = namePostEdit.value;
+  namePostEdit.style.display = 'none';
+  nameEdit.innerHTML = postEdit;
+  nameEdit.style.display = 'block';
+
   
 });
 

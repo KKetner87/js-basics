@@ -2,6 +2,14 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.user-name p{
+  display: block;
+}
+
+.user-name input{
+  display: none;
+}
+
 h1::first-letter { 
     font-size: 200%;
 }

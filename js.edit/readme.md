@@ -19,3 +19,7 @@ so that the transition from text to editable field is seamless and doesn't throw
     - Hide the input.
     - Show the text block.
     - Update the text block with the new text.
+    
+    
+1. Set up css to initially display username in block format having input hidden 
+2. in javascript set input to block and p to none 
