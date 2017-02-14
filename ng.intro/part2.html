@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="changed" lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.js"></script>
+  <script src="part2.js"></script>
+  <link rel="stylesheet" href="part2.css">
+  
+  <title>Part 2</title>
+  
+</head>
+<body ng-controller="text as changes">
+
+  <h1> 
+   Part 2
+  </h1>
+  
+  <h2 ng-mouseenter="exclamation =! exclamation" ng-mouseleave="exclamation =! exclamation">
+    Dino Movie<span ng-show="exclamation">!</span>
+  </h2>
+
+  <a href="http://jurassicpark.wikia.com/wiki/Jurassic_Park_Wiki">Hold on to your butts</a>
+  
+<p class="color" 
+   ng-class="{'pink': hover}" 
+   ng-mouseenter="hovor =! hover"
+   ng-mouseleave="hover =! hover"> Schlitz organic meggings hexagon. 3 wolf moon hell of keytar lyft gastropub butcher bicycle rights meditation. 
+  Chicharrones woke pug glossier. Retro vinyl fixie tumblr lo-fi, sustainable enamel pin beard church-key hammock franzen 
+  salvia single-origin coffee organic roof party. Etsy raw denim tote bag disrupt enamel pin, YOLO fanny pack cold-pressed 
+  flannel hammock. Sartorial scenester organic, unicorn pickled yuccie fingerstache bushwick. Before they sold out pok pok 
+  raw denim, enamel pin yuccie YOLO 3 wolf moon viral pabst.
+</p>
+  
+  <h2 ng-mouseenter="exclamation =! exclamation" ng-mouseleave="exclamation =! exclamation">
+    Scary Game<span ng-show="exclamation">!</span>
+  </h2>
+  
+  <a href="http://creepypasta.wikia.com/wiki/The_Slender_Man">Play Slender, they said. It'll be FUN, they said</a>
+  
+  
+<p class="color" 
+   ng-class="{'pink': hover}" 
+   ng-mouseenter="hover =! hover"
+   ng-mouseleave="hover =! hover">
+  Green juice thundercats unicorn, dreamcatcher celiac flexitarian etsy. Godard umami PBR knausgaard hot chicken, intelligentsia 
+  everyday carry XOXO wolf lomo blog vape deep v. Yr tattooed marfa air plant, mlkshk small batch cred photo booth green juice.
+  Portland vape activated charcoal, roof party leggings farm-to-table typewriter authentic. Selvage succulents blog keytar, vice chia 
+  sustainable kale chips farm-to-table hammock art party kombucha. Before they sold out artisan pinterest, migas jean shorts edison bulb 
+  mumblecore tacos hella. Pok pok church-key mumblecore hashtag austin intelligentsia.
+</p>
+
+
+  
+  
+</body>
+</html>

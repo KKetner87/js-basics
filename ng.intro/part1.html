@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="animal" lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.js"></script>
+  <script src="part1.js"></script>
+  <title>Part 1</title>
+  
+</head>
+<body ng-controller="button as cat">
+   <h1>
+     Part 1
+  </h1>
+  
+  <button  ng-click="cat.youGetAPuppy();">
+    Click me for a puppy!
+  </button>
+  
+  <button ng-click="cat.youGetACat();">
+    Click me for a kitten!
+    <ul> 
+       <li ng-repeat="cat in cat.catTypes">{{cat}}</li>
+    </ul>
+  </button>
+  
+  
+  
+</body>
+</html>

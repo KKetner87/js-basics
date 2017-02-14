@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="pop" lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.js"></script>
+  <script src="part3.js"></script>
+  <link rel="stylesheet" href="part3.css">
+  <title> Part 3</title>
+  
+</head>
+<body ng-controller="popUp">
+
+  <h1> 
+    Part 3
+  </h1>
+  
+  <button class="button_open" ng-click="pop =! pop" ng-hide="pop">
+    Click for World Domination!
+  </button>
+  
+  <div  class="button_close" ng-show="pop">
+    <h1>
+      Hello
+    </h1>
+    <P>
+      Selvage cold-pressed leggings man bun farm-to-table wayfarers, swag meggings banh mi lyft keytar williamsburg
+      kinfolk. Pork belly humblebrag twee, microdosing pok pok keffiyeh hoodie VHS salvia gochujang vice sartorial
+      tumblr mixtape affogato. Ramps poke lyft helvetica viral gochujang messenger bag, semiotics meditation tumeric 
+      ugh echo park forage drinking vinegar crucifix. XOXO waistcoat slow-carb forage. Venmo master cleanse raclette 
+      knausgaard truffaut, cred retro helvetica. Edison bulb retro affogato lomo, fingerstache air plant stumptown intelligentsia. 
+      Williamsburg cray thundercats, pitchfork bespoke asymmetrical pok pok YOLO hashtag narwhal.
+    </P>
+    <button ng-click="pop =! pop">
+      No world domination for you.
+    </button>
+  </div>
+  
+</body>
+</html>
