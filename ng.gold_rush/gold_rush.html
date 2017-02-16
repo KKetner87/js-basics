@@ -2,25 +2,34 @@
 <html ng-app="gold_rush" lang="en">
 <head>
   <meta charset="UTF-8">
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.js"></script>
   <script src="gold_rush.js"></script>
   <link rel="stylesheet" href="gold_rush.css">
-  
+
   <title>Gold rush project</title>
 </head>
-<body ng-controller="gold as golden">
-  
-<!--back ground image  -->
-  
-  <img ng-model ="golden.checkClick" ng-click="golden.checkClick($event)" src="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg"></img>
-  
-  
+
+<body ng-controller="gold as golden" ng-click="golden.mouseClick($event); img =! img">
+
+  <!--back ground image  -->
+  <div class="container" >
+
+
+    <img class="map"  src="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg"></img>
+
+  </div>
+  <div class="container2">
+
+    <img class="marker" style= "top: {{golden.lastClickInfo.pageY}}px; left: {{golden.lastClickInfo.pageX}}px;" ng-show="img" ng-src="{{golden.img}}"></li>
+
+  </div>
+
 <!-- <!--potato -->
 <!--   <div ng-click="addOnClick($event)"> -->
 <!--     <img src="http://vignette3.wikia.nocookie.net/nexttopthingy/images/1/1e/Potato-new-NTT.png/revision/latest?cb=20130621031614"></img> -->
 <!--   </div> -->
- 
-  
+
+
 </body>
 </html>
