@@ -31,11 +31,9 @@ function goldCtrl () {
     // golden.lastClickInfo.pageX.push = event.pageX;
     //golden.lastClickInfo.pageY.push = event.pageY;
   }
-  // golden.marker = [];
-  // golden.addMarker = function () {
-  //   golden.newMarker = {x,y}
-  //   golden.marker.push(golden.newMarker);
-  // }
+
+  golden.image="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg";
+}
 
 
 }
