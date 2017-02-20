@@ -9,21 +9,19 @@ userCtrl.$inject = [];
 function userCtrl() {
   var userForm = this;
   console.log("it works!");
-}
 
-function userForm() {
+  //   userForm.userInfo = [ 
+  //     {
+  //       name: 'Kirsten Ketner',
+  //       bio: 'I like food, fitness, horror movies, and dogs.',
+  //       favBooks: 'My favorite books are Good Omens and The Shining.',
+  //       favLibrary: 'I like using BootStrap and AngularJS.'
+  //     }
+  //     ];
+  // }
 
-
-  var userInfo = [ 
-    {
-      name: "Kirsten Ketner",
-      bio: "I like food, fitness, and dogs.",
-      favBooks: "My favorite books are Good Omens, Harry Potter series, and The Shining.",
-      favLibrary: "I like using BootStrap and AngularJS."
-    },
-  ]
-
-  return {
-    updatedInfo: userInfo,
-  }
+  userForm.name= 'Kirsten Ketner';
+  userForm.bio='I like food, fitness, horror movies, and dogs.';
+  userForm.favBooks= 'My favorite books are Good Omens and The Shining.';
+  userForm.favLibrary= 'I like using BootStrap and AngularJS.';
 }

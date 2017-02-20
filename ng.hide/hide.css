@@ -24,18 +24,6 @@ label {
 }
 
 
-.jumbotron {
-  display: block;
-  text-align: center;
-  border-bottom: 1px solid silver;
-  background-color: white;
-  height: 80px;
-  margin-top: 1%;
-  margin-bottom: 5%;
-  padding-top:20px;
-  border-radius: 25px;
-}
-
 .header {
   display: block;
   text-align: center;
@@ -49,12 +37,14 @@ label {
 
 .userProfile {
   margin-top: 20px;
+  padding-left: 10px;
   background-color: white;
   border: 1px solid silver;
   border-radius: 25px;
+  text-align: left;
 }
 
-h3 {
+h2 {
   padding: 10px 10px;
   margin: 10px 20px;
 }

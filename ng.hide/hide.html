@@ -14,82 +14,61 @@
 
 <body ng-controller="user as userForm">
 
-<div class="jumbotron">
-  <h1>Welcome Back to your Profile!</h1>
-  <p><a class="btn btn-primary btn-lg"></a></p>
-</div>
-  
-
-<!-- The form that the user will use to update their info  -->
-<!--     style="display:none" -->
 <div class="form_edit">
- <h3 class="header">
-    Update your information here
- </h3>
-<form class="form-horizontal" role="form">
+ <h2 class="header">Update your information here</h2>
+<form class="form-horizontal" role="form" ng-show="update">
   <div class="form-group">
     <label for="inputName3" class="col-sm-2 control-label">Name</label>
     <div class="col-sm-3">
-      <textarea class="form-control" rows="3" placeholder="Samuel L. Jackson" ng-model="userInfo.name"></textarea>
+      <textarea ng-model="userForm.name"class="form-control" rows="3" placeholder="Samuel L. Jackson" ></textarea>
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Bio</label>
     <div class="col-sm-3">
-     <textarea class="form-control" rows="3" placeholder="A caffeine dependent life-form" ng-model="userInfo.bio"></textarea>
+     <textarea ng-model="userForm.bio" class="form-control" rows="3" placeholder="A caffeine dependent life-form" ></textarea>
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Favorite Books</label>
     <div class="col-sm-3">
-      <textarea class="form-control" rows="3" placeholder="The Shining" ng-model="userInfo.book"></textarea>
+      <textarea ng-model="userForm.favBooks" class="form-control" rows="3" placeholder="The Shining" ></textarea>
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Favorite JS librarys</label>
     <div class="col-sm-3">
-      <textarea class="form-control" rows="3" placeholder="Bootstrap" ng-model="userInfo.favLibrary"></textarea>
+      <textarea ng-model="userForm.favLibrary" class="form-control" rows="3" placeholder="Bootstrap"></textarea>
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button id="submit_button" type="submit" class="btn btn-success">Submit</button>
-    </div>
   </div>
-      <h3 class="footer">
-    Your changes will appear automatically!
-  </h3>
+<button id="edit_button" type="button" class="btn btn-info" ng-click="update = !update">Summit your changes!</button>
 </form>
 </div>
+
   
   
 <!-- Your user profile that will be updated when the form above is used   -->
-  
 <div class="userProfile">
   <div>
-  <h3>
-   Name:{{userInfo.name}}
-  </h3>
+  <h3>Name: {{userForm.name}}</h3>
 </div>
   <div>
-  <h3>
-    Bio:{{userInfo.bio}}
-  </h3>
+  <h3>Bio: {{userForm.bio}}</h3>
 </div>
   <div>
-  <h3>
-    Favorite Books:{{userInfo.favBooks}}
-  </h3>
+  <h3>Favorite Books: {{userForm.favBooks}}</h3>
 </div>
   <div>
-  <h3>
-    Favorite JS Librarys:{{userInfo.favLibrary}}
-  </h3>
+  <h3>Favorite JS Librarys: {{userForm.favLibrary}}</h3>
 </div>
   </div>
 
-<button id="edit_button" type="button" class="btn btn-info">Click here to edit your profile!</button>
+<button id="edit_button" type="button" class="btn btn-info" ng-click="update = !update">Click here to edit your profile!</button>
 
+  
+  
 </body>
-
 </html>
