@@ -28,6 +28,8 @@ function goldCtrl () {
 
     golden.lastClickInfo.pageX = event.pageX;
     golden.lastClickInfo.pageY = event.pageY;
+    // golden.lastClickInfo.pageX.push = event.pageX;
+    //golden.lastClickInfo.pageY.push = event.pageY;
   }
   // golden.marker = [];
   // golden.addMarker = function () {
