@@ -20,6 +20,7 @@ function goldCtrl () {
   golden.checkClick = function(){
     console.log(event);
   }
+  golden.image="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg";
 }
 
 

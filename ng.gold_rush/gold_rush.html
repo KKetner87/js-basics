@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.js"></script>
   <script src="gold_rush.js"></script>
   <link rel="stylesheet" href="gold_rush.css">
   
   <title>Gold rush project</title>
+  
 </head>
 <body ng-controller="gold as golden">
   
-<!--back ground image  -->
+<!--background image  -->
   
-  <img ng-model ="golden.checkClick" ng-click="golden.checkClick($event)" src="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg"></img>
+  <img class="img-responsive" ng-model ="golden.checkClick" ng-click="golden.checkClick($event)" ng-src="{{golden.image}}"/>
   
   
 <!-- <!--potato -->
+  
 <!--   <div ng-click="addOnClick($event)"> -->
 <!--     <img src="http://vignette3.wikia.nocookie.net/nexttopthingy/images/1/1e/Potato-new-NTT.png/revision/latest?cb=20130621031614"></img> -->
 <!--   </div> -->
