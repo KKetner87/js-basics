@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="pawsitive" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <link rel="stylesheet" href="/midterm_project.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+  <script src="/jspages/midterm_project.module1.js"></script>
+  <script src="/jspages/midterm_project.controller1.home.js"></script>
+  <script src="/jspages/midterm_project.controller.petpage.js"></script>
+  <script src="/jspages/midterm_project.factory.js"></script>
+
+
+  <title>Pawsitive Altitude Denver Pet Adoption</title>
+
+</head>
+
+<body>
+
+  <section ng-controller="homePage as home">
+
+
+
+  </section>
+
+
+  <section ng-controller="petPage as animal">
+
+    <div class="jumbotron">
+      <div class="container">
+        <nav>
+          <ul>
+            <a href='#/'><button type="button" class="btn btn-warning">Home</button></a>
+            <a href='#/petpage'><button type="button" class="btn btn-warning">Pet Adoption</button></a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!--     this angular directive tells us where to insert the html templates -->
+
+  <ng-view></ng-view>
+
+</body>
+
+</html>
