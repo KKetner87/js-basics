@@ -18,10 +18,12 @@
   background-color: #77C9D4;
   border: 1px solid white;
   font-size: 16px;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
 }
 
 .btn-primary:hover {
-  background-color: #D7DD35;
+  background-color: #FFCE00;
   border: 1px solid white;
 }
 
@@ -44,12 +46,6 @@
   border-radius: 25px;
 }
 
-.pull-left {
-  height: 500px;
-  width: 300px;
-  font-weight: bold;
-  line-height: 1.6;
-}
 
 .aboutme {
   transition: opacity .15s linear;
@@ -59,8 +55,9 @@
   bottom: 0;
   left: 0;
   z-index: 1050;
-  border-radius: 25px;
+  border-radius: 4px;
 }
+
 
 /*** purchase modal ***/
 
@@ -68,7 +65,6 @@
   background-color: white;
   border-radius: 25px;
 }
-
 
 
 /*** homepage ***/
@@ -83,63 +79,78 @@ body {
 
 .nav {
   font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
-  font-size: 30px;
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
   color: white;
   width: 500px;
   height: 60px;
-  margin-left: 35%;
+  margin-left: 38%;
   overflow: hidden;
   margin-top: 2%;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  margin bottom: 2px;
 }
 
 #home:hover {
-  color: #77C9D4;
-  padding-left: 20px;
+  background-color: #FFCE00;
+  color: white;
+  cursor: pointer;
 }
 
 #adoptionpg:hover {
-  color: #77C9D4;
+  background-color: #FFCE00;
+  color: white;
+  cursor: pointer;
 }
 
 #home {
   float: left;
   color: inherit;
-  padding-right: 120px;
-  border-radius: 25px;
-  background-color: Transparent;
+  padding-right: 110px;
+  padding-left: 50px;
+  border-radius: 4px;
+  /*   background: rgba(255, 255, 255, 0.5); */
+  width: 60px;
+  margin-right: 20px;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  background-color: #77C9D4;
+  color: white;
+  /*   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
   overflow: hidden;
-  outline: none;
+  outline: none; */
 }
 
 #adoptionpg {
   float: left;
   color: inherit;
-  border-radius: 25px;
-  background-color: Transparent;
+  border-radius: 4px;
+  /*   background: rgba(255, 255, 255, 0.5); */
+  background-color: #77C9D4;
+  color: white;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  /*   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
   overflow: hidden;
-  outline: none;
+  outline: none; */
 }
 
 
 /***welcome page***/
 
 .greeting {
-  border-bottom: 1px solid white;
+  border-bottom: 1.5px solid white;
   color: white;
   border-radius: 5px;
-  margin: 20%;
-  margin-top: 12%;
-  font-size: 100px;
+  margin: 18%;
+  margin-top: 10%;
+  font-size: 120px;
   font-family: 'Sacramento', cursive;
   font-style: italic;
   text-align: center;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
   letter-spacing: 0.05em;
 }
 
@@ -147,33 +158,58 @@ body {
   position: relative;
 }
 
-
 .greetingbtn {
   position: absolute;
-  right: 40%;
-  bottom: 140px;
+  right: 38%;
+  bottom: 100px;
   width: 400px;
   height: 80px;
   font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.05em;
-  color: #D7DD35;
-  background-color: Transparent;
+  background-color: #77C9D4;
+  color: white;
+  /*   background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px; */
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  /*   background-color: Transparent;
   background-repeat: no-repeat;
   overflow: hidden;
-  outline: none;
-
+  outline: none; */
 }
 
 .greetingbtn:hover {
   cursor: pointer;
-  box-shadow: none;
-  color: #77C9D4;
-  background-color: Transparent;
-  background-repeat: no-repeat;
+/*   box-shadow: none; */
+  background-color: #FFCE00;
+  color: white;
+  /*   background: rgba(255, 255, 255, 0.5); */
+  /*   background-repeat: no-repeat;
   border: none;
   overflow: hidden;
-  outline: none;
+  outline: none; */
+}
+
+#adv-search {
+  margin-bottom: 50px;
+}
+
+.form-horizontal2 {
+  width: 300px;
+  padding: 5px;
+  height: 150px;
+}
+
+.form-group2 {
+  width: 300px;
+  margin: 20px;
+  padding-left: 50px;
+}
+
+#search {
+  padding: 10px;
+  margin-left: 50px;
+  margin-top: 20px;
 }

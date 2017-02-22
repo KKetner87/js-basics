@@ -80,7 +80,7 @@ function adoptCntl () {
       size : "Small",
       price : 120,
       fixed : "No",
-      notes : "This 8 week old kitten has been house trained!",
+      notes : "This 8 week old kitten has been litter box trained!",
       img    : "https://images.pexels.com/photos/171227/pexels-photo-171227.jpeg?h=350&auto=compress&cs=tinysrgb",
       qty : 1      
     },

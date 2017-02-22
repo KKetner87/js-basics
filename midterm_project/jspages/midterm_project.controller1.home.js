@@ -8,7 +8,7 @@ function homeCtrl(adoptInfo) {
   
   console.log(adoptInfo);
   
-  home.greeting = "Pawsitive Altitude Denver Pet Adoption!";
+  home.greeting = "Pawsitive Altitude Denver Pet Adoption";
   home.available = adoptInfo.pet;
   
   home.editAdopt = function(selectedPet){
