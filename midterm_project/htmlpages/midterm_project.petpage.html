@@ -1,25 +1,159 @@
 <div class="container">
 
   <div class="row">
-    <div ng-click="animal.buyPet(selectedPet)" ng-repeat="selectedPet in animal.available | filter:animal.isAvailable" class="col-xs-12 col-xs-4 selectedPet">
+    <div ng-repeat="selectedPet in animal.available | filter:animal.isAvailable" class="col-xs-12 col-xs-4 selectedPet">
 
-      <div id ="row1" class="row">
-        <div class="col-xs-12 col-sm-8 col-md-6 petPic" >
-          <img class="img" ng-src="{{selectedPet.img}}">
-            
+      <!--   section for the animal thumbnails     -->
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <div class="thumbnail">
+            <img class="img" ng-src="{{selectedPet.img}}">
+            <div class="caption">
+              <h3>{{selectedPet.name}}</h3>
+              <p><a href="#/petpage" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal{{$index}}">About Me</a></p>
+            </div>
+
+            <!--   section for 'about me' module      -->
+            <div class="modal fade" id="myModal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">About Me:</h4>
+                  </div>
+                  <div class="modal-body">
+                    <span class="pull-left">Name:  {{selectedPet.name}} <br> Gender:  {{selectedPet.gender}} <br> Age:  {{selectedPet.age}} 
+              <br> Breed: {{selectedPet.breed}} <br>Size: {{selectedPet.size}} <br>Price: {{selectedPet.price}} <br>Fixed: {{selectedPet.fixed}} 
+              <br>Notes: {{selectedPet.notes}}
+                   <div class="modal-footer">
+                     <a ng-click="animal.buyPet(selectedPet, $index)" role="button" class="btn" data-toggle="modal">Reserve now!</a>
+                   </div></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- section for "purchase" modal linked to "about me" modal  -->
+
+
+
+            <div id="purchase{{$index}}" class="modal fade" tabindex="-1" aria-labelledby="mySmallModalLabel" aria-hidden="true" data-width="760">
+              <div class="modal-dialog">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Reserve Your Pet!</h4>
+                </div>
+                <div class="modal-body">
+                  <form class="form-horizontal" role="form">
+
+
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="exampleInputName2">Name</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Derek Zoolander">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="inputEmail3">Email</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="human@planetearth.com" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="exampleInputName2">Phone Number</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="exampleInputName2" placeholder="867.5309">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="exampleInputName2">Message</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="exampleInputName2" placeholder="I am very interested in Spot!">
+                      </div>
+                    </div>
+                    <!--                     <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                      </div>
+                    </div> -->
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" data-dismiss="modal" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </div>
+
+
+            <!--  closing <div>s. Don't delete   -->
+
+
+          </div>
         </div>
       </div>
-      <div id="row2" class="row">
-        <div class="col-xs-12 col-sm-8 col-md-6 petBio">
-          <span class="pull-left">Name:  {{selectedPet.name}} <br> Gender:  {{selectedPet.gender}} <br> Age:  {{selectedPet.age}}</span>
-        </div>
-      </div>
-      
     </div>
   </div>
-  
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- this works to show 'about me' modal and need to link the 'buy me' button to a different 'purchase' modal
+<div class="container">
+
+  <div class="row">
+    <div  ng-repeat="selectedPet in animal.available | filter:animal.isAvailable" class="col-xs-12 col-xs-4 selectedPet">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <div class="thumbnail">
+            <img class="img" ng-src="{{selectedPet.img}}">
+            <div class="caption">
+              <h3>{{selectedPet.name}}</h3>
+              <p><a href="#/petpage" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">About Me</a></p>
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">About Me:</h4>
+                  </div>
+                  <div class="modal-body">
+                    <span class="pull-left">Name:  {{selectedPet.name}} <br> Gender:  {{selectedPet.gender}} <br> Age:  {{selectedPet.age}} 
+              <br> Breed: {{selectedPet.breed}} <br>Size: {{selectedPet.size}} <br>Price: {{selectedPet.price}} <br>Fixed: {{selectedPet.fixed}} 
+              <br>Notes: {{selectedPet.notes}}
+                   <div class="modal-footer">
+                     <a href="#/petpage"><button type="button" ng-click="animal.buyPet(selectedPet)" class="btn btn-default" data-dismiss="modal">Buy Now!</button></a>
+                   </div>
+          </span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
 
 <!--   <div class="container">
     

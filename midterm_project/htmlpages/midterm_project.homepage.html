@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i" rel="stylesheet">
   <link rel="stylesheet" href="/midterm_project.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+
   <script src="/jspages/midterm_project.module1.js"></script>
   <script src="/jspages/midterm_project.controller1.home.js"></script>
   <script src="/jspages/midterm_project.controller.petpage.js"></script>
@@ -32,21 +35,25 @@
 
   <section ng-controller="petPage as animal">
 
-    <div class="jumbotron">
-      <div class="container">
-        <nav>
-          <ul>
-            <a href='#/'><button type="button" class="btn btn-warning">Home</button></a>
-            <a href='#/petpage'><button type="button" class="btn btn-warning">Pet Adoption</button></a>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <!--  header / nav bar  -->
+
+
+<ul class= "nav">
+  <li><a id= "home" href='#/'>Home</a></li> 
+  <li><a id ="adoptionpg" href='#/petpage'>Pet Adoption</a></li>
+</ul>
+
+
+
+
+
+
   </section>
 
   <!--     this angular directive tells us where to insert the html templates -->
 
   <ng-view></ng-view>
+
 
 </body>
 
