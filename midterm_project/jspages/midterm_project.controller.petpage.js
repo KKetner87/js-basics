@@ -31,9 +31,10 @@ function petCtrl(adoptInfo,$timeout ) {
   animal.purchase = function(selectedPet) {
     console.log(selectedPet)
     $timeout(function() {
-           if (selectedPet.qty > 0) {
-        selectedPet.qty--
-      }
+//            if (selectedPet.qty > 0) {
+//         selectedPet.qty--
+//       }
+      animal.available.splice(animal.available.indexOf(selectedPet),1)
     }, 200)
   }
 
