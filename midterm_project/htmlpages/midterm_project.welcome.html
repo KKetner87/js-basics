@@ -2,43 +2,18 @@
   {{home.greeting}}
 </h1>
 
+
+<!-- button links to petpage  -->
 <div class="browse">
   <a href='#/petpage'><button type="button" class="btn btn-default btn-lg greetingbtn">Find Your Pet</button></a>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="input-group" id="adv-search">
-        <input type="text" class="form-control" placeholder="Search for pets!" />
-        <div class="input-group-btn">
-          <div class="btn-group" role="group">
-            <div class="dropdown dropdown-lg">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-              <div class="dropdown-menu dropdown-menu-right" role="menu">
-                <form class="form-horizontal2" role="form">
-                  <div class="form-group">
-                    <label for="filter">Filter by</label>
-                    <select class="form-control2">
-                                        <option value="0" selected>All Pets</option>
-                                        <option value="1">Type</option>
-                                        <option value="2">Breed</option>
-                                        <option value="3">Gender</option>
-                                        <option value="4">Size</option>
-                                        <option value="5">Age</option>
-                                        <option value="6">Price</option>
-                                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="contain">Contains the words</label>
-                    <input class="form-control" type="text" />
-                  </div>
-                  <button id="search" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                </form>
-              </div>
-            </div> <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+<!-- background video -->
+
+<div class="fullscreen-bg">
+  <video loop muted autoplay class="fullscreen-video"> 
+    <source src="https://d1235ca2z646oc.cloudfront.net/videos/processed/34/LAtoLA-HD.mp4.mp4" type="video/mp4">
+<!-- expires?        <source src="https://12-lvl3-pdl.vimeocdn.com/01/4700/4/123503867/350949661.mp4?expires=1487818554&token=0dbedacddb935bd3d7ecb" type="video/mp4"> -->
+</video>
+</div>

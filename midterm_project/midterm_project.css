@@ -2,7 +2,7 @@
 
 .container {
   font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
-  margin-top: 8%;
+  margin-top: 15%;
 }
 
 .caption {
@@ -39,42 +39,91 @@
 }
 
 .modal-content {
-  display: block;
-  height: 350px;
+  display: inline-block;
+  height: 800px;
+  overflow-y: auto;
+  width: 800px;
   padding: 10px;
   letter-spacing: 0.05em;
   border-radius: 25px;
 }
 
-
 .aboutme {
+  display: inline-block;
   transition: opacity .15s linear;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1050;
   border-radius: 4px;
+  height: auto;
+  width: 800px;
+  margin-left: 25%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
 }
 
 
 /*** purchase modal ***/
 
 .modal-dialog {
+  display: inline-block;
   background-color: white;
   border-radius: 25px;
+  height: auto;
+  width: 800px;
+  margin-left: 25%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
 }
 
 
 /*** homepage ***/
 
+
+/*the body is also holds the image to the petpage background  */
+
 body {
+  height: 100%;
+  margin: 5%;
   background: url(http://lh6.ggpht.com/a2hbPPdvs3zuYPrert7WIV6WJxK44xN_aiK-YaiAZJynfMhTwT6Mhfrcd3iHyPYaRBk7nL0gycLZLmiHig=s620) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.fullscreen-bg {
+  top: 0;
+  left: 0;
+  z index: -1;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.fullscreen-video {
+  top: 0;
+  left: 0;
+  z index: -1;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
 }
 
 .nav {
@@ -104,37 +153,54 @@ body {
 }
 
 #home {
+  position: absolute;
+  right: 60%;
+  z-index: 2;
   float: left;
   color: inherit;
   padding-right: 110px;
   padding-left: 50px;
   border-radius: 4px;
-  /*   background: rgba(255, 255, 255, 0.5); */
   width: 60px;
   margin-right: 20px;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
   background-color: #77C9D4;
   color: white;
-  /*   background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  overflow: hidden;
-  outline: none; */
 }
 
 #adoptionpg {
+  position: absolute;
+  left: 40%;
+  z-index: 2;
   float: left;
   color: inherit;
   border-radius: 4px;
-  /*   background: rgba(255, 255, 255, 0.5); */
   background-color: #77C9D4;
   color: white;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
-  /*   background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  overflow: hidden;
-  outline: none; */
+}
+
+#adv-search {
+  margin-bottom: 10px;
+}
+
+.form-horizontal2 {
+  width: 100px;
+  padding: 5px;
+  height: 150px;
+  margin: 10px;
+}
+
+.form-group2 {
+  width: 300px;
+  margin: 20px;
+  padding-left: 50px;
+}
+
+#search {
+  padding: 10px;
+  margin-left: 50px;
+  /*   margin-top: 20px; */
 }
 
 
@@ -152,18 +218,24 @@ body {
   text-align: center;
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
   letter-spacing: 0.05em;
+  position: relative;
+  top: 30%;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 720px;
 }
 
 .browse {
-  position: relative;
+  z-index: 1;
 }
 
 .greetingbtn {
   position: absolute;
-  right: 38%;
-  bottom: 100px;
+  down: 90%;
+  right: 33%;
   width: 400px;
   height: 80px;
+  margin: 5%;
   font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
   font-size: 40px;
   font-weight: bold;
@@ -171,45 +243,12 @@ body {
   letter-spacing: 0.05em;
   background-color: #77C9D4;
   color: white;
-  /*   background: rgba(255, 255, 255, 0.5);
-  border-radius: 4px; */
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
-  /*   background-color: Transparent;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  outline: none; */
+  z-index: 1;
 }
 
 .greetingbtn:hover {
   cursor: pointer;
-/*   box-shadow: none; */
   background-color: #FFCE00;
   color: white;
-  /*   background: rgba(255, 255, 255, 0.5); */
-  /*   background-repeat: no-repeat;
-  border: none;
-  overflow: hidden;
-  outline: none; */
-}
-
-#adv-search {
-  margin-bottom: 50px;
-}
-
-.form-horizontal2 {
-  width: 300px;
-  padding: 5px;
-  height: 150px;
-}
-
-.form-group2 {
-  width: 300px;
-  margin: 20px;
-  padding-left: 50px;
-}
-
-#search {
-  padding: 10px;
-  margin-left: 50px;
-  margin-top: 20px;
 }

@@ -1,38 +1,41 @@
 angular.module("pawsitive")
   .controller("petPage", petCtrl)
 
-petCtrl.$inject = ["adoptInfo"];
+petCtrl.$inject = ["adoptInfo", "$timeout"];
 
-function petCtrl(adoptInfo) {
+function petCtrl(adoptInfo,$timeout ) {
   var animal = this;
 
   animal.available = adoptInfo.pet;
+  
+      animal.showPet =function(selectedPet) {
+        console.log(selectedPet)
+        var ind = animal.available.indexOf (selectedPet)
+        $("#myModal" + ind).modal('show');
+      }
+      
+    animal.searchResults = function(selectedPet, ind) {
+    $("#results" ).modal('show')
+  }
 
-  animal.buyPet = function(selectedPet, ind) {
-   
+  
+    animal.buyPet = function(selectedPet) {
+  
+    var ind = animal.available.indexOf(selectedPet)
     $("#myModal" + ind).modal('hide');
     $("#purchase" + ind).modal('show');
     
   }
+ 
 
   animal.purchase = function(selectedPet) {
     console.log(selectedPet)
-    $("#close1_open2").click(function() {
-     if (selectedPet.qty > 0) {
+    $timeout(function() {
+           if (selectedPet.qty > 0) {
         selectedPet.qty--
       }
-});
+    }, 200)
   }
-
-
-
-
-// home.editAdopt = function(selectedPet){
-//     console.log(selectedPet)
-//     $('#selectedPet').modal('show');
-//     home.availablePet = selectedPet;
-//   }
-
 
 animal.isAvailable = function(selectedPet) {
   return selectedPet.qty > 0
@@ -40,17 +43,7 @@ animal.isAvailable = function(selectedPet) {
 
 }
 
-//  home.greeting = "Our Selection : ";
 
-//   home.inventory = StockRoom.stock;
 
-//   home.buyBooze = function(boozeItem){
-//     if(boozeItem.qty > 0){
-//       boozeItem.qty--
-//     }
-//   }
 
-//   home.isAvailable = function(boozeItem){
-//     return boozeItem.qty > 0
-//   }
-// }
+

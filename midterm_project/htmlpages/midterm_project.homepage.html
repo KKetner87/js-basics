@@ -33,15 +33,98 @@
   </section>
 
 
-  <section ng-controller="petPage as animal">
+  <section class="background_vid" ng-controller="petPage as animal">
 
     <!--  header / nav bar  -->
+    <ul class="nav">
+      <li><a id="home" href='#/'>Home</a></li>
+      <li><a id="adoptionpg" href='#/petpage'>Pet Adoption</a></li>
+    </ul>
 
 
-<ul class= "nav">
-  <li><a id= "home" href='#/'>Home</a></li> 
-  <li><a id ="adoptionpg" href='#/petpage'>Pet Adoption</a></li>
-</ul>
+
+    <!--search bar  -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group" id="adv-search">
+            <input ng-model="animal.search.$" type="text" class="form-control" placeholder="Search for pets!" />
+            <div class="input-group-btn">
+              <div class="btn-group" role="group">
+                <div class="dropdown dropdown-lg">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                  <div class="dropdown-menu dropdown-menu-right" role="menu">
+                    <form class="form-horizontal2" role="form">
+                      <div class="form-group">
+                        <label for="filter">Filter by</label>
+                        <br>
+                        <select class="form-control2" ng-model=animal.search.type>
+                                        <option value="" disabled selected>Type</option>
+                                        <option value="">Any</option>
+                                        <option value="dog" selected>Dog</option>
+                                        <option value="cat">Cat</option>
+                                    </select>
+                        <br>
+                        <select class="form-control2" ng-model=animal.search.gender>
+                                        <option value="" disabled selected>Gender</option>
+                                        <option value="">Any</option>
+                                        <option value="female" selected>Female</option>
+                                        <option value="male">Male</option>
+                                    </select>
+                        <br>
+                        <select class="form-control2" ng-model=animal.search.size>
+                                        <option value="" disabled selected>Size</option>
+                                        <option value="">Any</option>
+                                        <option value="small" selected>Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                    </select>
+
+                      </div>
+
+                      <button ng-click="animal.searching = true; animal.searchResults(selectedPet, $index)" id="search" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </form>
+                  </div>
+                </div> <button ng-click="animal.searching = true; animal.searchResults(selectedPet, $index)" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div ng-show="animal.searching">{{selectedPet}}</div>
+
+
+      <!-- modal for search bar results  -->
+
+      <div class="modal fade" id="results" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">About Me:</h4>
+            </div>
+            <div class="modal-body">
+              <span class="petResults">      
+                  <div class="row">
+                    <div ng-repeat="(petIndex, selectedPet) in animal.available | filter:animal.search" class="col-xs-12 col-sm-8 col-md-6">
+                     <div class="thumbnail">
+                      <img class="img" ng-src="{{selectedPet.img}}">
+                    <div class="caption">
+                    <h3>{{selectedPet.name}}</h3>
+              <p><a href="#/petpage" class="btn btn-primary" role="button" ng-click="animal.showPet(selectedPet)">About Me</a></p>
+
+                   </span>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" data-dismiss="modal" class="btn btn-default">Close</button>
+        </div>
+      </div>
+    </div>
+
 
 
 
