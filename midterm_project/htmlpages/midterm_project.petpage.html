@@ -34,7 +34,8 @@
               <br> Breed: {{selectedPet.breed}} <br>Size: {{selectedPet.size}} <br>Price: {{selectedPet.price | currency}} <br>Fixed: {{selectedPet.fixed}} 
               <br>Notes: {{selectedPet.notes}}
                    <div class="modal-footer">
-                     <a  ng-click="animal.buyPet(selectedPet, petIndex)" role="button" class="btn" data-toggle="modal"><button type="submit" data-dismiss="modal" class="btn btn-default">
+                     <button type="submit" data-dismiss="modal" class="btn btn-default back">Back to Pet Selection</button>
+                     <a  ng-click="animal.buyPet(selectedPet, petIndex)" role="button" class="btn" data-toggle="modal"><button type="submit" data-dismiss="modal" class="btn btn-default select">
                        Reserve now!
                        </button></a>
                    </div></span>
@@ -89,7 +90,8 @@
                 </div>
                 <div class="modal-footer">
                   <div class="alert alert-warning" role="alert">{{selectedPet.name}} can't wait to meet you! </div>
-                  <button type="submit" data-dismiss="modal" class="btn btn-default" ng-click="animal.purchase(selectedPet)">Reservation Complete</button>
+                  <button type="submit" data-dismiss="modal" class="btn btn-default back">Back to Pet Selection</button>
+                  <button type="submit" data-dismiss="modal" class="btn btn-default select" ng-click="animal.purchase(selectedPet)">Complete my Reservation!</button>
                 </div>
               </div>
             </div>
