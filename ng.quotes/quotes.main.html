@@ -11,10 +11,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+  <script src="quotes.module.js"></script>
   <script src="quotes.controller.addNewQuote.js"></script>
   <script src="quotes.controller.listAllQuotes.js"></script>
   <script src="quotes.factory.js"></script>
-  <script src="quotes.module.js"></script>
 
 
   <title>NG Inspirational Quotes</title>
@@ -22,8 +22,16 @@
 </head>
 
 <body>
-  
-      <div class="jumbotron">
+
+
+
+  <section ng-controller="newQuote as addQuote"></section>
+
+  <section ng-controller="allQuotes as list">
+    
+
+    <!--header and nav  -->
+    <div class="jumbotron">
       <div class="container">
         <h3>
           Share your Inspirational Quotes
@@ -31,25 +39,20 @@
       </div>
     </div>
 
-  
-<!-- quote list -->
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    <ul class="nav">
+      <li><a id="list" href='#/'>See Our Full List of Quotes</a></li>
+      <li><a id="addNew" href='#/addnewquote'>Add Your Own Quote</a></li>
+    </ul>
+
+
+  </section>
+
+
+ 
   
   <ng-view></ng-view>
-  
- 
+
+
 
 
 </body>

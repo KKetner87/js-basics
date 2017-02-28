@@ -1,18 +1,21 @@
-angular.module ("quoteSite", ['ngRoute'])
+angular.module("quoteSite", ['ngRoute'])
        .config(Router)
 
-Router.$inject=['$routeProvider'];
+Router.$inject = ['$routeProvider'];
 
 function Router($routeProvider) {
   console.log("loading router")
   $routeProvider
-      .when('/', { 
-      templateUrl: '/.welcome.html', 
-      controller: 'homePage as home'
+    .when('/', {
+      templateUrl: '/quotes.listAllQuotes.html',
+      controller: 'allQuotes as list'
     })
-    .when('/petpage', { 
-      templateUrl: '/htmlpages/midterm_project.petpage.html', 
-      controller: 'petPage as animal'
+    .when('/addnewquote', {
+      templateUrl: '/quotes.addNewQuote.html',
+      controller: 'newQuote as addQuote'
     })
-  .otherwise( {redirect:'/'});
+    .otherwise({
+      redirect: '/'
+    });
 }
+
