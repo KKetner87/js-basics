@@ -1,0 +1,26 @@
+.thumbnail {
+  margin: 3px;
+  width: 45%;
+  border-color: grey;
+  border-bottom: 2px solid grey;
+  border-right: 2px solid grey;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+}
+
+.thumbnail:active {
+  top: 3px;
+}
+
+.jumbotron {
+  background-image: url("http://www.ancalacc.com/sites/www.ancalacc.com/files/predefined-images/banner-tacos-mexicanos.jpg");
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-family: Lucida Sans Typewriter;
+  text-shadow: 2px 2px black;
+
+}
+
