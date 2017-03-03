@@ -24,6 +24,27 @@ function restaurantCtrl(restaurantInfo) {
         restaurant.total += restaurant.order[i].price;
       }
     }
+  },
+  restaurant.citrusFree = function () {
+    restaurant.cf=true;
+    restaurant.v=false;
+    restaurant.gf=false;
+  },
+  restaurant.glutenFree = function () {
+    restaurant.cf=false;
+    restaurant.v=false;
+    restaurant.gf=true;
+  },
+  restaurant.vegan = function () {
+    restaurant.cf=false;
+    restaurant.v=true;
+    restaurant.gf=false;
   }
-  
+ restaurant.purchase = function(){
+   var buy = confirm("Would you like to purchase this food?")
+   if (buy) {
+     alert("thanks!")
+     restaurant.order =[];
+   }
+ }
 }

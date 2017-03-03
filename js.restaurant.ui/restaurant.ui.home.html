@@ -31,7 +31,7 @@
 
   <!--  navbar and modal  -->
   <nav class="navbar navbar-default">
-    <button type="button" class="pull-right btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
+    <button type="button" class="pull-right btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">
       <span class="glyphicon glyphicon-shopping-cart"></span>
       <span class="badge">{{restaurant.order.length}}</span>
     </button>
@@ -54,8 +54,8 @@
           <p>
             Total: {{restaurant.total | currency}}
           </p>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" href="/">Purchase</button>
+          <button ng-click ="restaurant.purchase()" type="button" class="btn btn-info" data-dismiss="modal">Purchase</button>
+          
         </div>
       </div>
     </div>
@@ -64,7 +64,9 @@
   <!--  menu items    -->
   <div class='container'>
     <div class="row">
-      <div ng-click="restaurant.buy(item)" ng-repeat="item in restaurant.tacoStand.menu.plate" class="col-xs-12 col-md-6 thumbnail">
+      <div ng-click="restaurant.buy(item)" ng-repeat="item in restaurant.tacoStand.menu.plate" 
+          ng-class="{greenHighlight: restaurant.v && item.veganCheck(), blueHighlight: restaurant.cf && item.cfCheck(), 
+                     orangeHighlight: restaurant.gf && item.gfCheck()}" class="col-xs-12 col-md-6 thumbnail">
 
         <h3>
           {{item.name}}
@@ -79,7 +81,13 @@
       </div>
     </div>
   </div>
-
+  
+<!-- diet restrictions buttons   -->
+    <div class="col-xs-12">
+    <button ng-click="restaurant.vegan()" type="button" class="btn btn-warning">Vegan Options</button>
+    <button ng-click="restaurant.glutenFree()" type="button" class="btn btn-warning">Gluten-Free Options</button>
+    <button ng-click="restaurant.citrusFree()" type="button" class="btn btn-warning">Citrus-Free Options</button>
+    </div>
 
 
 
