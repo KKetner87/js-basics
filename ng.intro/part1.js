@@ -10,10 +10,9 @@ function pushForDog () {
   
 
 cat.youGetAPuppy = function() {
-  console.log("You're a lucky dog!") 
+  console.log("You're a lucky dog!");
+  cat.message ="BLAHBLAHBLAH";
 }
 
-cat.youGetACat = function(){
-  cat.catTypes =['Grumpy Cat', 'Naked Cat', 'Mr. Picklesworth'];
-}
+
 }

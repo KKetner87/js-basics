@@ -13,16 +13,23 @@
      Part 1
   </h1>
   
+  <h1>
+    {{cat.message}}
+  </h1>
+  
   <button  ng-click="cat.youGetAPuppy();">
     Click me for a puppy!
   </button>
   
-  <button ng-click="cat.youGetACat();">
+  <button ng-click="show =! show">
     Click me for a kitten!
-    <ul> 
-       <li ng-repeat="cat in cat.catTypes">{{cat}}</li>
+      </button>
+    <ul ng-show="show">
+      <li>Grumpy cat</li>
+      <li>Naked cat</li>
+      <li>Mr. Picklesworth</li>
     </ul>
-  </button>
+ 
   
   
   
