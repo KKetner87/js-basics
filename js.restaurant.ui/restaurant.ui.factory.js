@@ -131,12 +131,6 @@ function InfoFact () {
       }
       return receipt
     }
-
-   //  stringify () {
-   //   return `The ${this.name} costs ${this.price} and contains ${this.ingredients.map(function(ing){
-   //     return ing.stringify()
-   //   })}!`
-   // }
   }
 
   class Menu {
