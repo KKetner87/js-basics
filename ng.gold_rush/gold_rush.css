@@ -1,18 +1,19 @@
 .map {
-  width: 100%;
+  width: 100vw;
   height: auto;
 }
 
 .marker {
-  position: absolute;;
+  position: absolute;
   transform: translate(-50% , -50%);
-  width: 2%;
-  height: auto;
+  width: 5px;
+  height: 5px;
 }
 
+.note {
+  display:none;
+}
 
-
-/*.container2 {
-  position: absolute;
-  width: 800px;
-}*/
+.marker:hover.note {
+  display:block;
+}

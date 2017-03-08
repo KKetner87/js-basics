@@ -1,39 +1,42 @@
-angular.module("gold_rush",[]);
+angular.module("gold", [])
+  .controller("mainCtrl", mainCtrl);
 
-angular
-      .module("gold_rush")
-      .controller("gold", goldCtrl);
-
-goldCtrl.$inject =[];
-
-function goldCtrl () {
-  var golden =this;
-  console.log ("it works!");
-//   golden.addOnClick = function(event) {
-//         golden.items.push( {
-//             "label": "Click",
-//             "value": 100,
-//             "x": event.offsetX-50,
-//             "y": event.offsety-50,
-//         })
-// }
+mainCtrl.$inject = [];
 
 
-  golden.img = "http://vignette2.wikia.nocookie.net/nexttopthingy/images/c/c2/Potato.png/revision/latest?cb=20140421121844"
+function mainCtrl() {
+  var flagCtrl = this;
+
+  console.log("it works!");
+
+  flagCtrl.goldMines = [];
+  flagCtrl.addingANote = false;
 
 
-  golden.lastClickInfo = {},
-  golden.mouseClick = function(event){
-    console.log(event);
+  flagCtrl.addMarker = function(event) {
+    flagCtrl.lastClick = {
+      pageX: event.pageX / document.body.clientWidth * 100,
+      pageY: event.pageY / document.body.clientWidth * 100,
+      note: '',
+    };
 
-    golden.lastClickInfo.pageX = event.pageX;
-    golden.lastClickInfo.pageY = event.pageY;
-    // golden.lastClickInfo.pageX.push = event.pageX;
-    //golden.lastClickInfo.pageY.push = event.pageY;
+
+    flagCtrl.goldMines.push(flagCtrl.lastClick);
+    console.log("Adding marker at " + flagCtrl.lastCLick + "(" + flagCtrl.goldMines.length + ")");
+
+    flagCtrl.img = "https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg";
   }
 
-  golden.image="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg";
-}
+  flagCtrl.addANote = function() {
+    flagCtrl.goldMines[flagCtrl.goldMines.length - 1].note = flagCtrl.note;
+    flagCtrl.addingANote = false;
+    flagCtrl.note = '';
+  }
 
+  flagCtrl.removeFlag = function(index) {
+    if (confirm("Do you really want to remove the potato??")) {
+      flagCtrl.goldMines.splice(index - 1);
+    }
 
+  }
 }

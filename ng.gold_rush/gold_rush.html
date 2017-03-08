@@ -1,35 +1,46 @@
 <!DOCTYPE html>
-<html ng-app="gold_rush" lang="en">
+<html ng-app="gold" lang="en">
+
 <head>
   <meta charset="UTF-8">
 
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <link rel="stylesheet" href="gold_rush.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.js"></script>
   <script src="gold_rush.js"></script>
-  <link rel="stylesheet" href="gold_rush.css">
+
 
   <title>Gold rush project</title>
 
 </head>
 
-<body ng-controller="gold as golden" ng-click="golden.mouseClick($event); img =! img">
-
-  <!--back ground image  -->
-  <div class="container" >
+<body ng-controller="mainCtrl as flagCtrl">
 
 
-    <img class="map"  src="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg"></img>
 
-  </div>
-  <div class="container2">
+  <div ng-click="flagCtrl.addMarker($event)">
+    <img class="map" src="https://raw.githubusercontent.com/KKetner87/mywork/master/ng.gold_rush/topo-co.jpg"></img>
 
-    <img  class="marker" style= "top: {{golden.lastClickInfo.pageY}}px; left: {{golden.lastClickInfo.pageX}}px;" ng-show="img" ng-src="{{golden.img}}"></li>
 
-  </div>
+    <div class="marker" ng-repeat="goldMine in flagCtrl.goldMines" style="top: {{goldMine.pageY}}vw; left: {{goldMine.pageX}}vw;">
+
+      <img class="flag" ngclick="flagCtrl.removeFlag($index)" src="http://vignette2.wikia.nocookie.net/nexttopthingy/images/c/c2/Potato.png/revision/latest?cb=20140421121844"></img>
+      <div class="note">{{goldMine.note}}</div>
+    </div>
+
+    <form ng-submit="flagCtrl.addANote()" ng-show="flagCtrl.addingANote" style=" position:absolute; top: {{flagCtrl.lastClick.pageY-3}}vw; left: {{flagCtrl.lastClick.pageX}}vw;">
+
+      <input type="text" ng-model="flagCtrl.note">
+      <button type="submit">
+      Add Note!
+    </button>
+
+    </form>
 
 
 
 </body>
+
 </html>
