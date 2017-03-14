@@ -9,10 +9,10 @@
 //failed attempt//
 
 // function addNumbers(string) {
-  
+
 //   var Numbers =[];
-  
-  
+
+
 //   for (var i = 0; i < string.length; i++) {
 //     for (var a = 0; a < string.length; a++) {
 //       if (typeof i === 'number' && typeof(i + 1) === 'number') {
@@ -27,40 +27,45 @@
 // }
 
 
-function number(num){
- // return !isNaN(parseFloat(num)) && isFinite(num);
+function number(num) {
+  // return !isNaN(parseFloat(num)) && isFinite(num);
 
- if (typeof (parseInt(num)) === 'number' && isNaN(parseInt(num)) === false && isFinite(parseInt(num)) === true){
-   return num
- }
+  if (typeof(parseInt(num)) === 'number' && isNaN(parseInt(num)) === false && isFinite(parseInt(num)) === true) {
+    return num
+  }
 }
 
-function addNumbers(string){
+function addNumbers(string) {
 
-var numbers = []
+  var numbers = []
 
- for (var i = 0; i < string.length; i++){
+  for (var i = 0; i < string.length; i++) {
 
-   if(number(string[i]) == string[i]){
-     numbers.push(string[i])
+    if (number(string[i]) == string[i]) {
+      numbers.push(string[i])
 
-     var x = i+1;
+      var x = i + 1;
 
-     while(string[x] == number(string[x])&& x <= string.length){
-       numbers[numbers.length-1] += string[x];
-       // console.log(numbers)
-       x++;
-     }
-     i = x;
-     // numbers.push(string[i])
-   }
+      while (string[x] == number(string[x]) && x <= string.length) {
+        numbers[numbers.length - 1] += string[x];
+        // console.log(numbers)
+        x++;
+      }
+      i = x;
+      // numbers.push(string[i])
+    }
 
- }for (var a = 0 ; a < numbers.length ; a ++){
-   return numbers
-         .map(function(str) { return parseInt(str); })
-         .reduce(function(x,y) {return x+y});
+  }
+  for (var a = 0; a < numbers.length; a++) {
+    return numbers
+      .map(function(str) {
+        return parseInt(str);
+      })
+      .reduce(function(x, y) {
+        return x + y
+      });
 
-   }
+  }
 }
 
 console.log(addNumbers("88Hello 3World"));
@@ -75,20 +80,24 @@ console.log(addNumbers("5Hello 5"));
 // Write a function longestWord that takes a single string parameter and returns the largest word in the string. 
 // If there are two or more words that are the same length, it returns the first word from the string with that length.
 // Ignore punctuation and assume the input sentence will not be empty.
-var long =[];
 
-function longestWord (string) {
 
-  for (var i = 0; i < string.length; i++) {
-    if(string[i].length > string[i+1].length){
-     long.push(string[i]);
-    } else {
-    long.push(string[i+1]);  
-  } 
-  }   
+function longestWord(string) {
+
+  var arr = string.split(" ");
+  var long = [arr[0]];
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].length > long[0].length) {
+      long.push(arr[i]);
+      long.shift();
+    }
+  }
+  return long;
 }
 
-console.log(long['Hello my friend']);
+console.log(longestWord('Hello my friend.'));
+console.log(longestWord("I can't spell resturant!"));
 
 
 
