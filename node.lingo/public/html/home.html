@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="lingoMod" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/lingo.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+
+  <script src="/js/factory.js"></script>
+  <script src="/js/module.js"></script>
+  <script src="/js/progress_controller.js"></script>
+  <script src="/js/quiz_controller.js"></script>
+  <script src="/js/translate_controller.js"></script>
+
+  <title>Say Hello</title>
+
+</head>
+
+<body>
+
+  <section ng-controller="lingoCtrl as lingo">
+
+    <h1>
+        {{lingo.greeting}}
+      </h1>
+    <br>
+    <h2 ng-model="lingo.word">Learn how to say hello in another language!</h2>
+    
+    <input type="text" ng-model="lingo.word">
+    <select ng-model="lingo.lang">
+        <option value="de">German</option>
+         <option value="th">Thai</option>
+         <option value="so">Somali</option>
+         <option value="sk">Slovak</option>
+         <option value="fr">French</option>
+         <option value="es">Spanish</option>
+      </select>
+    
+    <button class='btn btn-success' ng-click='translate()'>Translate Now!</button>
+    
+    <h1>{{res.data}}</h1>
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ng-view></ng-view>
+
+</body>
+
+</html>
