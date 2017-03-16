@@ -25,14 +25,18 @@ app.get("/", (req, res) =>{
 });
 
 app.post('/translate', (req,res)=>{
-  console.log('something')
   googleTranslate.translate(req.body.word, req.body.from, req.body.to,(err,trans)=>{
     res.send(trans);
     console.log('it translated')
   })
 })
 
-
+app.post('/quiz', (req,res)=>{
+  googleTranslate.translate(req.body.word, req.body.from, req.body.to,(err,transQuiz)=>{
+    res.send(transQuiz);
+    console.log(err)
+  })
+})
 
 
 

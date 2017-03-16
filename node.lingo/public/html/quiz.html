@@ -15,9 +15,10 @@
       </select>
 
 <div ng-repeat='words in quiz.question.words'>
-  <h3 ng-model='words'>
+  <h3 ng-model='quiz.words'>
     {{words.word}}
   </h3>
+
   
   <br>
   <input class="form-control" placeholder="Text input" type="text" ng-model='words.answer'>
@@ -31,10 +32,15 @@
     one
   </h3>
   <input type="text" ng-model='quiz.answer1'> -->
+
 </div>
 
-    <button class='btn btn-success' ng-click='lingo.translate()'>Translate Now!</button>
+    <button class='btn btn-success' ng-click='quiz.translate()'>Check Quiz!</button>
 
+<div class="" ng-repeat='trans in quiz.resData'>
+
+<h1>{{trans.translatedText}}</h1>
+</div>
 <!--     <h1>{{quiz.resData}}</h1> -->
 
 
