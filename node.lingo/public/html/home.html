@@ -23,54 +23,12 @@
 
 <body>
 
-  <section ng-controller="lingoCtrl as lingo">
-
-    <h1>
-        {{lingo.greeting}}
-      </h1>
-    <br>
-    <h2 ng-model="lingo.word">Learn how to say hello in another language!</h2>
-
-    <!-- <input type="text" ng-model="lingo.word"> -->
-    <select ng-model="lingo.lang">
-        <option value="de">German</option>
-         <option value="th">Thai</option>
-         <option value="so">Somali</option>
-         <option value="sk">Slovak</option>
-         <option value="fr">French</option>
-         <option value="es">Spanish</option>
-      </select>
-
-    <button class='btn btn-success' ng-click='lingo.translate()'>Translate Now!</button>
-
-    <h1>{{lingo.resData}}</h1>
 
 
 
 
 
-
-
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <ng-view></ng-view>
+ <ng-view></ng-view>
 
 </body>
 

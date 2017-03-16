@@ -15,7 +15,7 @@ function lingoCtrl ($http) {
     $http({method:'POST',
     url: '/translate',
       data : {
-        word:'hello',
+        word: lingo.word,
         from: 'en',
         to: lingo.lang
       }
