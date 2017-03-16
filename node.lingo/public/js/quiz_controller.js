@@ -6,7 +6,7 @@ quizCtrl.$inject = ['$http'];
 
 function quizCtrl ($http) {
   var quiz = this;
-  
+
   quiz.question = {
     words :[{word : 'one',
            answer : ''},
@@ -27,9 +27,58 @@ function quizCtrl ($http) {
            {word : 'nine',
            answer : ''},
           { word : 'ten',
-           answer : ''},]
-  }
+           answer : ''},
+  ]}
   quiz.greeting="Prepare to be quizzed!"
+
+  quiz.translate = function (){
+
+    $http({method:'POST',
+    url: '/quiz',
+      data : {
+        word: quiz.question.words.map(function(word){
+          return word.word
+        }),
+        from: 'en',
+        to: quiz.lang
+      }
+  }).then(function(res){
+      quiz.resData = res.data;
+      quiz.quizLength = quiz.resData.length;
+      console.log(quiz.quizLength)
+
+
+      ////////////////////////////////////////////
+      // CHECKING ANSWERS
+      ////////////////////////////////////////////
+
+      for (var i = 0; i < quiz.quizLength; i++){
+        console.log('Correct Answer ' + quiz.resData[i].translatedText + ' Your Answer ' + quiz.question.words[i].answer)
+        if (quiz.resData[i].translatedText == quiz.question.words[i].answer){
+          console.log('Awesome')
+        }else{
+          console.log('No Dice')
+        }
+
+        // console.log(quiz.resData[i].translatedText, quiz.question.words[i].word, quiz.question.words[i].answer)
+      }
+
+
+
+
+
+    })
+  }
+
+
+////////////////////////////////////////////
+// CHECKING ANSWERS
+////////////////////////////////////////////
+
+// for (var i = 0; i < quizLength; i++){
+//   console.log(quiz.resData[i].translatedText)
+//   console.log(quiz.question.words[i].word)
+// }
 
 
 //   lingo.translate = function (){
