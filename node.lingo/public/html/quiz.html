@@ -5,7 +5,7 @@
     <h2>Pick a language to study!</h2>
 
 <!--     <input type="text" ng-model="lingo.word"> -->
-    <select ng-model="quiz.lang">
+    <select class="form-control" ng-model="quiz.lang">
         <option value="de">German</option>
          <option value="th">Thai</option>
          <option value="so">Somali</option>
@@ -18,7 +18,9 @@
   <h3 ng-model='words'>
     {{words.word}}
   </h3>
-  <input type="text" ng-model='words.answer'>
+  
+  <br>
+  <input class="form-control" placeholder="Text input" type="text" ng-model='words.answer'>
   
 <!--    <h3 ng-model='quiz.word2'>
     two
