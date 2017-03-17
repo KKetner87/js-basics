@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
   <link rel="stylesheet" href="/css/lingo.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
@@ -20,26 +22,36 @@
   <title>Say Hello</title>
 
 </head>
- 
+
 
 <body>
 
-  
-  <div class="jumbotron">
-  <div class="container">
-    <p class="jumboGreet">
-      Welcome to Say "Hello"!
-    </p>
+
+  <div class="jumbotron" id="header">
+    <div class="container">
+      <p class="jumboGreet">
+        Welcome to Say "Hello!"
+      </p>
     </div>
-    
-
   </div>
+  
+  
+  
+  <nav class="navbar navbar-default">
+  <div class="container-fluid pull-right">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    <button type="button" class="btn btn-info navbar-btn">Translate</button>
+      <button type="button" class="btn btn-info navbar-btn">Quiz</button>
+      <button type="button" class="btn btn-info navbar-btn">Progress</button>
+    </div>
+    </div>
+  </nav>
 
 
 
 
-
- <ng-view></ng-view>
+  <ng-view></ng-view>
 
 </body>
 
