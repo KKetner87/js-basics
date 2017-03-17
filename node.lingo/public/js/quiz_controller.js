@@ -1,113 +1,91 @@
 angular.module("lingoMod")
-       .controller("quizCtrl", quizCtrl);
+      .controller("quizCtrl", quizCtrl);
 
 quizCtrl.$inject = ['$http'];
 
 
 function quizCtrl ($http) {
-  var quiz = this;
-  
-  
+ var quiz = this;
+ 
+ 
 
-  quiz.question = {
-<<<<<<< HEAD
-    words :[{word : 'one',
-           answer : '',
-           correct : ''},
-          { word : 'two',
-           answer : '',
-           correct : ''},
-           {word : 'three',
-           answer : '',
-           correct : ''},
-          { word : 'four',
-           answer : '',
-           correct : ''},
-           {word : 'five',
-           answer : '',
-           correct : ''},
-          { word : 'six',
-           answer : '',
-           correct : ''},
-           {word : 'seven',
-           answer : '',
-           correct : ''},
-          { word : 'eight',
-           answer : '',
-           correct : ''},
-           {word : 'nine',
-           answer : '',
-           correct : ''},
-          { word : 'ten',
-           answer : '',
-           correct : ''},
-=======
-    words :[{word : 'Hello',
-           answer : ''},
-          { word : 'Dog',
-           answer : ''},
-           {word : 'Yes',
-           answer : ''},
-          { word : 'Ten',
-           answer : ''},
-           {word : 'Green',
-           answer : ''},
-          { word : 'Bathroom',
-           answer : ''},
-           {word : 'Goodbye',
-           answer : ''},
-          { word : 'Woman',
-           answer : ''},
-           {word : 'Good',
-           answer : ''},
-          { word : 'Love',
-           answer : ''},
->>>>>>> 89c9a9b0ef62d276f3f29ac42a2fd6caf05d06cb
-  ]}
-  quiz.greeting="Prepare to be quizzed!"
+ quiz.question = {
+   words :[{word : 'one',
+          answer : '',
+          correct : ''},
+         { word : 'two',
+          answer : '',
+          correct : ''},
+          {word : 'three',
+          answer : '',
+          correct : ''},
+         { word : 'four',
+          answer : '',
+          correct : ''},
+          {word : 'five',
+          answer : '',
+          correct : ''},
+         { word : 'six',
+          answer : '',
+          correct : ''},
+          {word : 'seven',
+          answer : '',
+          correct : ''},
+         { word : 'eight',
+          answer : '',
+          correct : ''},
+          {word : 'nine',
+          answer : '',
+          correct : ''},
+         { word : 'ten',
+          answer : '',
+          correct : ''},
 
-  quiz.translate = function (){
+ ]}
+ quiz.greeting="Prepare to be quizzed!"
 
-    $http({method:'POST',
-    url: '/quiz',
-      data : {
-        word: quiz.question.words.map(function(word){
-          return word.word
-        }),
-        from: 'en',
-        to: quiz.lang
-      }
-  }).then(function(res){
-      quiz.resData = res.data;
-      quiz.quizLength = quiz.resData.length;
-      console.log(quiz.quizLength)
+ quiz.translate = function (){
+
+   $http({method:'POST',
+   url: '/quiz',
+     data : {
+       word: quiz.question.words.map(function(word){
+         return word.word
+       }),
+       from: 'en',
+       to: quiz.lang
+     }
+ }).then(function(res){
+     quiz.resData = res.data;
+     quiz.quizLength = quiz.resData.length;
+     console.log(quiz.quizLength)
 
 
-      ////////////////////////////////////////////
-      // CHECKING ANSWERS
-      ////////////////////////////////////////////
+     ////////////////////////////////////////////
+     // CHECKING ANSWERS
+     ////////////////////////////////////////////
 
-      for (var i = 0; i < quiz.quizLength; i++){
-        quiz.correct = false;
-        quiz.Incorrect = false;
-        console.log('Correct Answer ' + quiz.resData[i].translatedText.toLowerCase() + ' Your Answer ' + quiz.question.words[i].answer)
-        if (quiz.resData[i].translatedText.toLowerCase() == quiz.question.words[i].answer.toLowerCase()){
-          console.log('Awesome')
-          quiz.question.words[i].correct = true;
-        }else{
-          console.log('No Dice')
-          quiz.question.words[i].correct = false;
-        }
+     for (var i = 0; i < quiz.quizLength; i++){
+       quiz.correct = false;
+       quiz.Incorrect = false;
+       console.log('Correct Answer ' + quiz.resData[i].translatedText.toLowerCase() + ' Your Answer ' + quiz.question.words[i].answer)
+       if (quiz.resData[i].translatedText.toLowerCase() == quiz.question.words[i].answer.toLowerCase()){
+         console.log('Awesome')
+         quiz.question.words[i].correct = true;
+       }else{
+         console.log('No Dice')
+         quiz.question.words[i].correct = false;
+       }
 
-        // console.log(quiz.resData[i].translatedText, quiz.question.words[i].word, quiz.question.words[i].answer)
-      }
+       // console.log(quiz.resData[i].translatedText, quiz.question.words[i].word, quiz.question.words[i].answer)
+     }
 
 
 
 
 
-    })
-  }
+   })
+ }
 
 
 ////////////////////////////////////////////
