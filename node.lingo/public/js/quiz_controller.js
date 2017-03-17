@@ -10,6 +10,38 @@ function quizCtrl ($http) {
   
 
   quiz.question = {
+<<<<<<< HEAD
+    words :[{word : 'one',
+           answer : '',
+           correct : ''},
+          { word : 'two',
+           answer : '',
+           correct : ''},
+           {word : 'three',
+           answer : '',
+           correct : ''},
+          { word : 'four',
+           answer : '',
+           correct : ''},
+           {word : 'five',
+           answer : '',
+           correct : ''},
+          { word : 'six',
+           answer : '',
+           correct : ''},
+           {word : 'seven',
+           answer : '',
+           correct : ''},
+          { word : 'eight',
+           answer : '',
+           correct : ''},
+           {word : 'nine',
+           answer : '',
+           correct : ''},
+          { word : 'ten',
+           answer : '',
+           correct : ''},
+=======
     words :[{word : 'Hello',
            answer : ''},
           { word : 'Dog',
@@ -30,6 +62,7 @@ function quizCtrl ($http) {
            answer : ''},
           { word : 'Love',
            answer : ''},
+>>>>>>> 89c9a9b0ef62d276f3f29ac42a2fd6caf05d06cb
   ]}
   quiz.greeting="Prepare to be quizzed!"
 
@@ -55,11 +88,15 @@ function quizCtrl ($http) {
       ////////////////////////////////////////////
 
       for (var i = 0; i < quiz.quizLength; i++){
-        console.log('Correct Answer ' + quiz.resData[i].translatedText + ' Your Answer ' + quiz.question.words[i].answer)
-        if (quiz.resData[i].translatedText == quiz.question.words[i].answer){
+        quiz.correct = false;
+        quiz.Incorrect = false;
+        console.log('Correct Answer ' + quiz.resData[i].translatedText.toLowerCase() + ' Your Answer ' + quiz.question.words[i].answer)
+        if (quiz.resData[i].translatedText.toLowerCase() == quiz.question.words[i].answer.toLowerCase()){
           console.log('Awesome')
+          quiz.question.words[i].correct = true;
         }else{
           console.log('No Dice')
+          quiz.question.words[i].correct = false;
         }
 
         // console.log(quiz.resData[i].translatedText, quiz.question.words[i].word, quiz.question.words[i].answer)
