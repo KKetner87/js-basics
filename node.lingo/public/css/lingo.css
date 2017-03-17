@@ -115,3 +115,8 @@
  .quizAnswer {
    width: 50%;
  }
+
+ .falseAnswer {
+   font-family: 'Amatic SC', cursive;
+   font-size: 45px;
+ }
