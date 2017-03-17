@@ -1,14 +1,22 @@
 <div class="container">
   <div id="noBorder" class="form-control">
 
-  <h1 class="pgHeader">{{quiz.greeting}}</h1>
-  <br>
-  <h3 class="chooseLang">Which language would you like to study?</h3>
- <hr>
+
+    <h1 class="pgHeader">{{quiz.greeting}}</h1>
+
+    <h3 class="chooseLang">Which language would you like to study?</h3>
+    <hr>
+    <br>
+
+    <!--     <input type="text" ng-model="lingo.word"> -->
+    <select class="form-control" ng-model="quiz.lang">
+     <option value="" selected disabled>Choose a language:</option>
+
 
   <!--     <input type="text" ng-model="lingo.word"> -->
   <select class ="form-control" ng-model="quiz.lang">
      <option value="" selected disabled>Pick a language!</option>
+
         <option value="de">German</option>
          <option value="th">Thai</option>
          <option value="so">Somali</option>
@@ -20,43 +28,33 @@
     <br>
     <br>
 
+
   <div ng-repeat='words in quiz.question.words'>
     <h3 ng-model='quiz.words'> What is the word for :
+
     {{words.word}}
   </h3>
 
 
-  <br>
-  <input ng-class='{green: words.correct === true, red: words.correct === false}' class="form-control" placeholder="Text input" type="text" ng-model='words.answer'>
-  <!-- <h5 ng-show='quiz.correct'>Correct</h5>
-  <h5 ng-show='quiz.Incorrect'>Incorrect</h5> -->
 
-<!--    <h3 ng-model='quiz.word2'>
+      <br>
+      <input class="quizAnswer" placeholder="answer here" type="text" ng-model='words.answer'>
 
-    two
-  </h3>
-  <input type="text" ng-model='quiz.answer2'>
-
-   <h3 ng-model='quiz.word1'>
-    one
-  </h3>
-  <input type="text" ng-model='quiz.answer1'> -->
-
-  </div>
+    </div>
     <br>
 
     <br>
 
+    <div ng-repeat='trans in quiz.resData'>
 
-  <button class='btn btn-success' ng-click='quiz.translate()'>Check Your Quiz Results!</button>
-<br>
-  <div ng-repeat='trans in quiz.resData'>
+      <h1>{{trans.translatedText}}</h1>
+    </div>
+    <br>
 
-    <h1>{{trans.translatedText}}</h1>
-  </div>
-<br>
-</div>
-</div>
+    <button class='btn btn-success' ng-click='quiz.translate()'>Check Your Quiz Results!</button>
+    <br>
+    <br>
+
 <!--     <h1>{{quiz.resData}}</h1> -->
 
 
