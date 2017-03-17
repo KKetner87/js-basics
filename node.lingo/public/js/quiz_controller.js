@@ -8,6 +8,7 @@ function quizCtrl ($http) {
   var quiz = this;
 
   quiz.question = {
+<<<<<<< HEAD
     words :[{word : 'one',
            answer : '',
            correct : ''},
@@ -38,6 +39,28 @@ function quizCtrl ($http) {
           { word : 'ten',
            answer : '',
            correct : ''},
+=======
+    words :[{word : 'Hello',
+           answer : ''},
+          { word : 'Dog',
+           answer : ''},
+           {word : 'Yes',
+           answer : ''},
+          { word : 'Ten',
+           answer : ''},
+           {word : 'Green',
+           answer : ''},
+          { word : 'Bathroom',
+           answer : ''},
+           {word : 'Goodbye',
+           answer : ''},
+          { word : 'Woman',
+           answer : ''},
+           {word : 'Good',
+           answer : ''},
+          { word : 'Love',
+           answer : ''},
+>>>>>>> 89c9a9b0ef62d276f3f29ac42a2fd6caf05d06cb
   ]}
   quiz.greeting="Prepare to be quizzed!"
 
