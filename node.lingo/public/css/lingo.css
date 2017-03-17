@@ -1,5 +1,5 @@
  /*home.html */
- 
+
  .jumbotron {
    position: relative;
    background: #000 url("https://images.pexels.com/photos/296881/pexels-photo-296881.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb") center center;
@@ -8,7 +8,7 @@
    background-size: cover;
    overflow: hidden;
  }
- 
+
  .jumboGreet {
    text-align: center;
    color: white;
@@ -17,39 +17,49 @@
    font-family: "Arial Black", Gadget, sans-serif;
  }
  /* translate.html */
- 
+
  #translate_pg {
    height: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
  }
- 
+
  #translate_pg2 {
    height: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
  }
- 
+
  #translate_pg3 {
    height: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
  }
- 
+
  #translate_pg4 {
    height: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
  }
- 
+
  .chooseTrans {
    width: 50%;
    padding: 5px;
    margin: 25px;
    margin-top: 50px;
    margin-bottom: 50px;
+ }
+
+ .green{
+   background-color: green;
+   /*color: green*/
+ }
+
+ .red{
+   background-color: red;
+   /*color: red;*/
  }

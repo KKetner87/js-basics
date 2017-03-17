@@ -19,15 +19,17 @@
     {{words.word}}
   </h3>
 
-  
+
   <br>
-  <input class="form-control" placeholder="Text input" type="text" ng-model='words.answer'>
-  
+  <input ng-class='{green: words.correct === true, red: words.correct === false}' class="form-control" placeholder="Text input" type="text" ng-model='words.answer'>
+  <!-- <h5 ng-show='quiz.correct'>Correct</h5>
+  <h5 ng-show='quiz.Incorrect'>Incorrect</h5> -->
+
 <!--    <h3 ng-model='quiz.word2'>
     two
   </h3>
   <input type="text" ng-model='quiz.answer2'>
-  
+
    <h3 ng-model='quiz.word1'>
     one
   </h3>
@@ -37,10 +39,10 @@
 
     <button class='btn btn-success' ng-click='quiz.translate()'>Check Quiz!</button>
 
-<div class="" ng-repeat='trans in quiz.resData'>
+<!-- <div class="" ng-repeat='trans in quiz.resData'>
 
 <h1>{{trans.translatedText}}</h1>
-</div>
+</div> -->
 <!--     <h1>{{quiz.resData}}</h1> -->
 
 

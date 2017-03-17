@@ -9,25 +9,35 @@ function quizCtrl ($http) {
 
   quiz.question = {
     words :[{word : 'one',
-           answer : ''},
+           answer : '',
+           correct : ''},
           { word : 'two',
-           answer : ''},
+           answer : '',
+           correct : ''},
            {word : 'three',
-           answer : ''},
+           answer : '',
+           correct : ''},
           { word : 'four',
-           answer : ''},
+           answer : '',
+           correct : ''},
            {word : 'five',
-           answer : ''},
+           answer : '',
+           correct : ''},
           { word : 'six',
-           answer : ''},
+           answer : '',
+           correct : ''},
            {word : 'seven',
-           answer : ''},
+           answer : '',
+           correct : ''},
           { word : 'eight',
-           answer : ''},
+           answer : '',
+           correct : ''},
            {word : 'nine',
-           answer : ''},
+           answer : '',
+           correct : ''},
           { word : 'ten',
-           answer : ''},
+           answer : '',
+           correct : ''},
   ]}
   quiz.greeting="Prepare to be quizzed!"
 
@@ -53,11 +63,15 @@ function quizCtrl ($http) {
       ////////////////////////////////////////////
 
       for (var i = 0; i < quiz.quizLength; i++){
-        console.log('Correct Answer ' + quiz.resData[i].translatedText + ' Your Answer ' + quiz.question.words[i].answer)
-        if (quiz.resData[i].translatedText == quiz.question.words[i].answer){
+        quiz.correct = false;
+        quiz.Incorrect = false;
+        console.log('Correct Answer ' + quiz.resData[i].translatedText.toLowerCase() + ' Your Answer ' + quiz.question.words[i].answer)
+        if (quiz.resData[i].translatedText.toLowerCase() == quiz.question.words[i].answer.toLowerCase()){
           console.log('Awesome')
+          quiz.question.words[i].correct = true;
         }else{
           console.log('No Dice')
+          quiz.question.words[i].correct = false;
         }
 
         // console.log(quiz.resData[i].translatedText, quiz.question.words[i].word, quiz.question.words[i].answer)
