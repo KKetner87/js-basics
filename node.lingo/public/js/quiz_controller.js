@@ -6,8 +6,8 @@ quizCtrl.$inject = ['$http'];
 
 function quizCtrl ($http) {
   var quiz = this;
-  
-  
+
+
 
   quiz.question = {
     words :[{word : 'one',
